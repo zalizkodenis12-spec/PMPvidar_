@@ -84,20 +84,21 @@
     2: {
       title: 'Мастила, антифризи та спецрідини',
       items: [
-        { name: 'Солідол', desc: 'Пластичне мастило. Фасовка: 0.4кг / 4.5кг / 17кг', price: '170–3700 грн', img: '' },
-        { name: 'Літол', desc: 'Пластичне мастило. Фасовка: 9кг / 4.5кг / 17кг', price: '2600–4800 грн', img: '' },
-        { name: 'Омивач Yuko', desc: 'Омивач лобового скла. Обсяг: 2L', price: '160 грн', img: '' },
-        { name: 'AdBlue', desc: 'Рідина для SCR-систем дизельних авто. Обсяг: 1L', price: '22 грн', img: '' },
-        { name: 'Антифриз YUKO -42', desc: 'Червоний (G12). Обсяг: 5л / 10л / ун. 5л — 700 грн', price: '200–1400 грн', img: '' },
-        { name: 'Антифриз конц. WOLVER 5л', desc: 'Синій (G11) / Червоний (G12+). Концентрат', price: '1200–1400 грн', img: '' },
-        { name: 'Гальмівна рідина YUKO дот 4', desc: 'Гальмівна рідина DOT 4. Обсяг: 0.6л', price: '205 грн', img: '' },
-        { name: 'Мастило силіконове Аерозоль 400мл', desc: 'Силіконове мастило в аерозолі', price: '250 грн', img: '' },
-        { name: 'Масла для харчової промисловості', desc: 'Імпортні під замовлення', price: 'За запитом', img: '' },
-        { name: 'Масла для виробництва і транспорту', desc: 'Будь-які масла та смазки для різних типів техніки', price: 'За запитом', img: '' },
-        { name: 'Оліви Арал / Shell / Titan / Castrol / BMW / Bardahl / Elf / Ford / Febi / GM / Honda / Kia', desc: 'Імпортні оливи провідних брендів', price: 'За запитом', img: '' },
-        { name: 'Оліви Hundai / Kia / Ligui Moly / Mapetrol / Mazda / Mercedes / Mobil / Motul / Nissan / Orien', desc: 'Імпортні оливи провідних брендів', price: 'За запитом', img: '' },
-        { name: 'WAG WD-40 ZIG', desc: 'Заправка автокондиціонерів авто і с/г техніки', price: 'За запитом', img: '' },
-        { name: 'Підбір масел і мастил', desc: 'Під транспорт і обладнання — безкоштовна консультація', price: 'За запитом', img: '' },
+        { name: 'Солідол', desc: 'Пластичне мастило. Фасовка: 0.4кг / 4.5кг / 17кг', price: '170–3700 грн', img: 'assets/images/Знімок екрана 2026-07-14 230319.png' },
+        { name: 'Літол', desc: 'Пластичне мастило. Фасовка: 9кг / 4.5кг / 17кг', price: '2600–4800 грн', img: 'assets/images/Знімок екрана 2026-07-14 231124.png' },
+        { name: 'Омивач Yuko', desc: 'Омивач лобового скла. Обсяг: 2L', price: '160 грн', img: 'assets/images/Знімок екрана 2026-07-14 231349.png' },
+        { name: 'AdBlue', desc: 'Рідина для SCR-систем дизельних авто. Обсяг: 1L', price: '22 грн', img: 'assets/images/Знімок екрана 2026-07-14 231455.png' },
+        { name: 'Антифриз YUKO -42', desc: 'Червоний (G12). Обсяг: 5л / 10л / ун. 5л — 700 грн', price: '200–1400 грн', img: 'assets/images/Знімок екрана 2026-07-14 231701.png' },
+        { name: 'Антифриз конц. WOLVER 5л Синій (G11)', desc: 'Концентрат', price: '1200–1400 грн', img: 'assets/images/Знімок екрана 2026-07-14 231803.png' },
+        { name: 'Антифриз конц. WOLVER 5л Червоний (G12+)', desc: 'Концентрат', price: '1200–1400 грн', img: 'assets/images/Знімок екрана 2026-07-14 231842.png' },
+        { name: 'Гальмівна рідина YUKO дот 4', desc: 'Гальмівна рідина DOT 4. Обсяг: 0.6л', price: '205 грн', img: 'assets/images/Знімок екрана 2026-07-14 232103.png' },
+        { name: 'Мастило силіконове Аерозоль 400мл', desc: 'Силіконове мастило в аерозолі', price: '250 грн', img: 'assets/images/Знімок екрана 2026-07-14 232212.png' },
+        { name: 'Масла для харчової промисловості', desc: 'Імпортні під замовлення', price: 'За запитом', img: 'assets/images/Знімок екрана 2026-07-14 232331.png' },
+        { name: 'Масла для виробництва і транспорту', desc: 'Будь-які масла та смазки для різних типів техніки', price: 'За запитом', img: 'assets/images/Знімок екрана 2026-07-14 232607.png' },
+        { name: 'Оліви Арал / Shell / Titan / Castrol / BMW / Bardahl / Elf / Ford / Febi / GM / Honda / Kia', desc: 'Імпортні оливи провідних брендів', price: 'За запитом', img: ['assets/images/Знімок екрана 2026-07-14 232805.png', 'assets/images/Знімок екрана 2026-07-14 232846.png', 'assets/images/Знімок екрана 2026-07-14 232914.png', 'assets/images/Знімок екрана 2026-07-14 232933.png', 'assets/images/Знімок екрана 2026-07-14 233027.png', 'assets/images/Знімок екрана 2026-07-14 233054.png', 'assets/images/Знімок екрана 2026-07-14 233118.png', 'assets/images/Знімок екрана 2026-07-14 233212.png', 'assets/images/Знімок екрана 2026-07-14 233233.png', 'assets/images/Знімок екрана 2026-07-14 233311.png'] },
+        { name: 'Оліви Hundai / Kia / Ligui Moly / Mapetrol / Mazda / Mercedes / Mobil / Motul / Nissan / Orien', desc: 'Імпортні оливи провідних брендів', price: 'За запитом', img: ['assets/images/Знімок екрана 2026-07-14 233451.png', 'assets/images/Знімок екрана 2026-07-14 233530.png', 'assets/images/Знімок екрана 2026-07-14 233551.png', 'assets/images/Знімок екрана 2026-07-14 233616.png', 'assets/images/Знімок екрана 2026-07-14 233639.png', 'assets/images/Знімок екрана 2026-07-14 233705.png', 'assets/images/Знімок екрана 2026-07-14 233738.png', 'assets/images/Знімок екрана 2026-07-14 233803.png'] },
+        { name: 'WAG WD-40 ZIG', desc: 'Заправка автокондиціонерів авто і с/г техніки', price: 'За запитом', img: 'assets/images/Знімок екрана 2026-07-14 234017.png' },
+        { name: 'Підбір масел і мастил', desc: 'Під транспорт і обладнання — безкоштовна консультація', price: 'За запитом', img: 'assets/images/Знімок екрана 2026-07-14 234104.png' },
       ]
     },
     3: {
@@ -186,6 +187,47 @@
   const productModalPlaceholder = document.getElementById('productModalPlaceholder');
   const productModalOrder = document.getElementById('productModalOrder');
 
+  const modalSliderPrev = document.getElementById('modalSliderPrev');
+  const modalSliderNext = document.getElementById('modalSliderNext');
+  const modalSliderDots = document.getElementById('modalSliderDots');
+  const fsSliderPrev = document.getElementById('fsSliderPrev');
+  const fsSliderNext = document.getElementById('fsSliderNext');
+
+  let currentImages = [];
+  let currentImageIndex = 0;
+
+  const updateSliderImage = () => {
+    if (currentImages.length === 0) return;
+    const src = currentImages[currentImageIndex];
+    productModalImg.src = src;
+    if (fullscreenImgOverlay.classList.contains('open')) {
+      fullscreenImg.src = src;
+    }
+    // Update dots
+    Array.from(modalSliderDots.children).forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === currentImageIndex);
+    });
+  };
+
+  const handleSliderPrev = (e) => {
+    if (e) e.stopPropagation();
+    if (currentImages.length <= 1) return;
+    currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+    updateSliderImage();
+  };
+
+  const handleSliderNext = (e) => {
+    if (e) e.stopPropagation();
+    if (currentImages.length <= 1) return;
+    currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+    updateSliderImage();
+  };
+
+  modalSliderPrev.addEventListener('click', handleSliderPrev);
+  modalSliderNext.addEventListener('click', handleSliderNext);
+  fsSliderPrev.addEventListener('click', handleSliderPrev);
+  fsSliderNext.addEventListener('click', handleSliderNext);
+
   const openProductModal = (categoryId, itemIdx) => {
     const cat = catalogData[categoryId];
     if (!cat) return;
@@ -197,14 +239,46 @@
     productModalDesc.textContent = item.desc;
     productModalPrice.textContent = item.price;
 
-    if (item.img) {
-      productModalImg.src = item.img;
+    currentImages = Array.isArray(item.img) ? item.img : (item.img ? [item.img] : []);
+    currentImageIndex = 0;
+
+    if (currentImages.length > 0) {
+      productModalImg.src = currentImages[0];
       productModalImg.alt = item.name;
       productModalImg.style.display = 'block';
       productModalPlaceholder.style.display = 'none';
+
+      if (currentImages.length > 1) {
+        modalSliderPrev.style.display = 'flex';
+        modalSliderNext.style.display = 'flex';
+        fsSliderPrev.style.display = 'flex';
+        fsSliderNext.style.display = 'flex';
+        modalSliderDots.innerHTML = '';
+        currentImages.forEach((_, idx) => {
+          const dot = document.createElement('div');
+          dot.className = 'slider-dot' + (idx === 0 ? ' active' : '');
+          dot.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = idx;
+            updateSliderImage();
+          });
+          modalSliderDots.appendChild(dot);
+        });
+      } else {
+        modalSliderPrev.style.display = 'none';
+        modalSliderNext.style.display = 'none';
+        fsSliderPrev.style.display = 'none';
+        fsSliderNext.style.display = 'none';
+        modalSliderDots.innerHTML = '';
+      }
     } else {
       productModalImg.style.display = 'none';
       productModalPlaceholder.style.display = 'flex';
+      modalSliderPrev.style.display = 'none';
+      modalSliderNext.style.display = 'none';
+      fsSliderPrev.style.display = 'none';
+      fsSliderNext.style.display = 'none';
+      modalSliderDots.innerHTML = '';
     }
 
     productModal.classList.add('open');
@@ -242,8 +316,8 @@
   const fullscreenImgClose = document.getElementById('fullscreenImgClose');
 
   const openFullscreenImage = () => {
-    if (!productModalImg.src || productModalImg.style.display === 'none') return;
-    fullscreenImg.src = productModalImg.src;
+    if (currentImages.length === 0) return;
+    fullscreenImg.src = currentImages[currentImageIndex];
     fullscreenImg.alt = productModalImg.alt;
     fullscreenImgOverlay.classList.add('open');
     fullscreenImgOverlay.removeAttribute('aria-hidden');

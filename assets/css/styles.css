@@ -483,8 +483,9 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
   background: var(--accent);
   flex-shrink: 0;
 }
-.about-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-.about-actions .btn-ghost svg { transition: transform var(--transition); }
+.about-actions { display: flex; gap: 16px; align-items: center; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+.about-actions .btn-ghost { white-space: nowrap; }
+.about-actions .btn-ghost svg { transition: transform var(--transition); flex-shrink: 0; }
 .about-actions .btn-ghost:hover svg { transform: translate(2px, -2px); }
 
 /* ===== Reviews ===== */
@@ -601,8 +602,8 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: #fff;
+  background: #fff;
+  color: #111;
   border: none;
   border-radius: 50%;
   width: 44px;
@@ -614,13 +615,14 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
   cursor: pointer;
   z-index: 10;
   transition: background 0.3s, transform 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 .slider-btn:hover {
-  background: rgba(0,0,0,0.8);
+  background: #f0f0f0;
   transform: translateY(-50%) scale(1.1);
 }
-.slider-btn.prev-btn { left: 10px; }
-.slider-btn.next-btn { right: 10px; }
+.slider-btn.prev { left: 10px; }
+.slider-btn.next { right: 10px; }
 
 .slider-dots {
   position: absolute;
@@ -770,6 +772,7 @@ h1, h2, h3, .logo-text, .main-nav a, .mobile-nav a, .footer-nav a, .btn {
   overflow: hidden;
   padding: 130px 0;
   text-align: center;
+  background: linear-gradient(rgba(10, 10, 12, 0.85), rgba(10, 10, 12, 0.85)), url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1920&q=70') center/cover no-repeat;
 }
 .booking-section::before {
   content: '';

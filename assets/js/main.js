@@ -55,30 +55,30 @@
         { name: 'SAE 75W90', desc: 'YUKO / WOLVER. Трансмісійна олива', price: '310–360 грн', img: 'assets/images/Знімок екрана 2026-07-14 213847.png' },
         { name: 'YUKO ATF IID', desc: 'Рідина для автоматичних коробок передач. Обсяг: 1л', price: '300 грн', img: 'assets/images/Знімок екрана 2026-07-14 214016.png' },
         { name: 'Камазівська (М10Г2К)', desc: 'Моторна олива для вантажних автомобілів', price: '140 грн', img: 'assets/images/Знімок екрана 2026-07-14 214139.png' },
-        { name: 'Турбодизель (М10/Дм)', desc: 'Моторна олива для турбодизельних двигунів', price: '145 грн', img: '' },
-        { name: 'Тепловозна/автомобільна (М14В2/М8В)', desc: 'Олива для тепловозів та автомобілів', price: '170 грн', img: '' },
-        { name: 'Холодильна (ХА 30)', desc: 'Компресорна олива для холодильних установок', price: '185 грн', img: '' },
-        { name: 'Турбіне (ТП 22с / ТП 30 / ТП 46)', desc: 'Олива для парових та газових турбін', price: '180–200 грн', img: '' },
-        { name: 'Компресорне (КС19)', desc: 'Олива для компресорів', price: '200 грн', img: '' },
-        { name: 'Трансмісійне (ТАДІ7, Тан-15)', desc: 'Трансмісійна олива', price: '210–200 грн', img: '' },
-        { name: 'Нігрол', desc: 'Трансмісійна олива. Обсяг: 4л / 20л', price: '115–2360 грн', img: '' },
-        { name: 'Індустріальне (Yuko I-20 / I-40)', desc: 'Індустріальна олива для верстатів і обладнання', price: '140–145 грн', img: '' },
-        { name: 'Гідравлічне (МГЕ-46 / HYDROL 32/46)', desc: 'Гідравлічна олива', price: '150–220 грн', img: '' },
-        { name: 'YUKO 2T / MOL 2T', desc: 'Олива для двотактних двигунів. Обсяг: 1л', price: '200 грн', img: '' },
-        { name: 'Вазелінове', desc: 'Технічне вазелінове мастило. Обсяг: 200 л.б.', price: 'Договірна', img: '' },
-        { name: 'Масила (Циатим 201-221)', desc: 'Пластичне мастило. 6100гр / Графіт. 1950гр 1:3', price: 'За запитом', img: '' },
-        { name: 'Нефрас', desc: 'Нафтовий розчинник', price: '100 грн', img: '' },
-        { name: 'Гас (kerosyn)', desc: 'Гас технічний', price: '110 грн', img: '' },
-        { name: 'Емульсол MOL Makromil 300', desc: 'Мастильно-охолоджуюча рідина', price: '320 грн', img: '' },
-        { name: 'Total 5W30 — 9000 NFC 5L', desc: 'Синтетична моторна олива Total', price: '1800 грн', img: '' },
-        { name: 'Total 5W30 — INEO LONG LIFE 5L', desc: 'Синтетична моторна олива Total', price: '1850 грн', img: '' },
-        { name: 'Total 5W40 — 9000 Energy 5L', desc: 'Синтетична моторна олива Total', price: '1500 грн', img: '' },
-        { name: 'Mol 5W40 Dynamic 4L', desc: 'Синтетична моторна олива MOL', price: '1400 грн', img: '' },
-        { name: 'Mol 5W30 Gold 4L', desc: 'Синтетична моторна олива MOL', price: '1500 грн', img: '' },
-        { name: 'SHELL 5W30 — 1L', desc: 'Моторна олива Shell', price: '400 грн', img: '' },
-        { name: 'SHELL 5W40 — 1L', desc: 'Моторна олива Shell', price: '380 грн', img: '' },
-        { name: 'SHELL 10W40 — 1L', desc: 'Моторна олива Shell', price: '350 грн', img: '' },
-        { name: 'Арал 10W40 Mega Turbo LA 208л', desc: 'Моторна олива для вантажних автомобілів. Бочка 208л', price: '47000 грн', img: '' },
+        { name: 'Турбодизель (М10/Дм)', desc: 'Моторна олива для турбодизельних двигунів', price: '145 грн', img: 'assets/images/Знімок екрана 2026-07-14 214831.png' },
+        { name: 'Тепловозна/автомобільна (М14В2/М8В)', desc: 'Олива для тепловозів та автомобілів', price: '170 грн', img: 'assets/images/Знімок екрана 2026-07-14 220205.png' },
+        { name: 'Холодильна (ХА 30)', desc: 'Компресорна олива для холодильних установок', price: '185 грн', img: 'assets/images/Знімок екрана 2026-07-14 220731.png' },
+        { name: 'Турбіне (ТП 22с / ТП 30 / ТП 46)', desc: 'Олива для парових та газових турбін', price: '180–200 грн', img: 'assets/images/Знімок екрана 2026-07-14 220831.png' },
+        { name: 'Компресорне (КС19)', desc: 'Олива для компресорів', price: '200 грн', img: 'assets/images/Знімок екрана 2026-07-14 221131.png' },
+        { name: 'Трансмісійне (ТАДІ7, Тан-15)', desc: 'Трансмісійна олива', price: '210–200 грн', img: 'assets/images/Знімок екрана 2026-07-14 221308.png' },
+        { name: 'Нігрол', desc: 'Трансмісійна олива. Обсяг: 4л / 20л', price: '115–2360 грн', img: 'assets/images/Знімок екрана 2026-07-14 221449.png' },
+        { name: 'Індустріальне (Yuko I-20 / I-40)', desc: 'Індустріальна олива для верстатів і обладнання', price: '140–145 грн', img: 'assets/images/Знімок екрана 2026-07-14 221559.png' },
+        { name: 'Гідравлічне (МГЕ-46 / HYDROL 32/46)', desc: 'Гідравлічна олива', price: '150–220 грн', img: 'assets/images/Знімок екрана 2026-07-14 221858.png' },
+        { name: 'YUKO 2T / MOL 2T', desc: 'Олива для двотактних двигунів. Обсяг: 1л', price: '200 грн', img: 'assets/images/Знімок екрана 2026-07-14 222026.png' },
+        { name: 'Вазелінове', desc: 'Технічне вазелінове мастило. Обсяг: 200 л.б.', price: 'Договірна', img: 'assets/images/Знімок екрана 2026-07-14 222137.png' },
+        { name: 'Масила (Циатим 201-221)', desc: 'Пластичне мастило. 6100гр / Графіт. 1950гр 1:3', price: 'За запитом', img: 'assets/images/Знімок екрана 2026-07-14 222315.png' },
+        { name: 'Нефрас', desc: 'Нафтовий розчинник', price: '100 грн', img: 'assets/images/Знімок екрана 2026-07-14 222415.png' },
+        { name: 'Гас (kerosyn)', desc: 'Гас технічний', price: '110 грн', img: 'assets/images/Знімок екрана 2026-07-14 222611.png' },
+        { name: 'Емульсол MOL Makromil 300', desc: 'Мастильно-охолоджуюча рідина', price: '320 грн', img: 'assets/images/Знімок екрана 2026-07-14 222723.png' },
+        { name: 'Total 5W30 — 9000 NFC 5L', desc: 'Синтетична моторна олива Total', price: '1800 грн', img: 'assets/images/Знімок екрана 2026-07-14 223013.png' },
+        { name: 'Total 5W30 — INEO LONG LIFE 5L', desc: 'Синтетична моторна олива Total', price: '1850 грн', img: 'assets/images/Знімок екрана 2026-07-14 223151.png' },
+        { name: 'Total 5W40 — 9000 Energy 5L', desc: 'Синтетична моторна олива Total', price: '1500 грн', img: 'assets/images/Знімок екрана 2026-07-14 223801.png' },
+        { name: 'Mol 5W40 Dynamic 4L', desc: 'Синтетична моторна олива MOL', price: '1400 грн', img: 'assets/images/Знімок екрана 2026-07-14 223930.png' },
+        { name: 'Mol 5W30 Gold 4L', desc: 'Синтетична моторна олива MOL', price: '1500 грн', img: 'assets/images/Знімок екрана 2026-07-14 224046.png' },
+        { name: 'SHELL 5W30 — 1L', desc: 'Моторна олива Shell', price: '400 грн', img: 'assets/images/Знімок екрана 2026-07-14 224143.png' },
+        { name: 'SHELL 5W40 — 1L', desc: 'Моторна олива Shell', price: '380 грн', img: 'assets/images/Знімок екрана 2026-07-14 224234.png' },
+        { name: 'SHELL 10W40 — 1L', desc: 'Моторна олива Shell', price: '350 грн', img: 'assets/images/Знімок екрана 2026-07-14 224413.png' },
+        { name: 'Арал 10W40 Mega Turbo LA 208л', desc: 'Моторна олива для вантажних автомобілів. Бочка 208л', price: '47000 грн', img: 'assets/images/Знімок екрана 2026-07-14 224511.png' },
       ]
     },
     2: {
@@ -236,10 +236,40 @@
     setTimeout(() => document.getElementById('booking').scrollIntoView({ behavior: 'smooth' }), 350);
   });
 
+  // ===== Fullscreen Image View =====
+  const fullscreenImgOverlay = document.getElementById('fullscreenImgOverlay');
+  const fullscreenImg = document.getElementById('fullscreenImg');
+  const fullscreenImgClose = document.getElementById('fullscreenImgClose');
+
+  const openFullscreenImage = () => {
+    if (!productModalImg.src || productModalImg.style.display === 'none') return;
+    fullscreenImg.src = productModalImg.src;
+    fullscreenImg.alt = productModalImg.alt;
+    fullscreenImgOverlay.classList.add('open');
+    fullscreenImgOverlay.removeAttribute('aria-hidden');
+  };
+
+  const closeFullscreenImage = () => {
+    fullscreenImgOverlay.classList.remove('open');
+    fullscreenImgOverlay.setAttribute('aria-hidden', 'true');
+    setTimeout(() => { fullscreenImg.src = ''; }, 300);
+  };
+
+  productModalImg.addEventListener('click', openFullscreenImage);
+  fullscreenImgClose.addEventListener('click', closeFullscreenImage);
+  fullscreenImgOverlay.addEventListener('click', (e) => {
+    if (e.target === fullscreenImgOverlay) closeFullscreenImage();
+  });
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      if (productModal.classList.contains('open')) closeProductModal();
-      else if (sidebar.classList.contains('open')) closeSidebar();
+      if (fullscreenImgOverlay && fullscreenImgOverlay.classList.contains('open')) {
+        closeFullscreenImage();
+      } else if (productModal && productModal.classList.contains('open')) {
+        closeProductModal();
+      } else if (sidebar && sidebar.classList.contains('open')) {
+        closeSidebar();
+      }
     }
   });
 

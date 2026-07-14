@@ -39,128 +39,88 @@
         }
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-
     revealTargets.forEach((el) => observer.observe(el));
   }
 
-  // ===== Gallery slider =====
-  const track = document.getElementById('galleryTrack');
-  if (track) {
-    const dotsWrap = document.getElementById('galleryDots');
-    const prevBtn = document.getElementById('galleryPrev');
-    const nextBtn = document.getElementById('galleryNext');
-    const slides = Array.from(track.children);
-
-    slides.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.setAttribute('role', 'tab');
-      dot.setAttribute('aria-label', `Слайд ${i + 1}`);
-      dot.addEventListener('click', () => slides[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' }));
-      dotsWrap.appendChild(dot);
-    });
-    const dots = Array.from(dotsWrap.children);
-
-    const updateActive = () => {
-      const trackRect = track.getBoundingClientRect();
-      let closestIndex = 0;
-      let closestDist = Infinity;
-      slides.forEach((slide, i) => {
-        const dist = Math.abs(slide.getBoundingClientRect().left - trackRect.left);
-        if (dist < closestDist) { closestDist = dist; closestIndex = i; }
-      });
-      dots.forEach((d, i) => d.classList.toggle('active', i === closestIndex));
-    };
-    updateActive();
-    track.addEventListener('scroll', () => {
-      window.requestAnimationFrame(updateActive);
-    }, { passive: true });
-
-    const scrollByStep = (dir) => {
-      const step = slides[0].getBoundingClientRect().width + 18;
-      track.scrollBy({ left: step * dir, behavior: 'smooth' });
-    };
-    prevBtn.addEventListener('click', () => scrollByStep(-1));
-    nextBtn.addEventListener('click', () => scrollByStep(1));
-  }
-
-  // ===== Catalog Sidebar =====
+  // ===== Catalog Data =====
   const catalogData = {
     1: {
       title: 'Моторні та технічні оливи',
       items: [
-        'WOLVER 5W30 — 1л / 4л / 5л',
-        'WOLVER 5W40 — 1л / 4л',
-        'WOLVER 10W40 — 1л / 4л',
-        'SAE мега дизель 10W40 (YUKO / WOLVER)',
-        'SAE мега дизель 15W40 розлив (YUKO / WOLVER)',
-        'SAE 75W90 (YUKO / WOLVER)',
-        'YUKO ATF IID — 1л',
-        'Камазівська (М10Г2К)',
-        'Турбодизель (М10/Дм)',
-        'Тепловозна/автомобільна (М14В2/М8В)',
-        'Холодильна (ХА 30)',
-        'Турбіне (ТП 22с / ТП 30 / ТП 46)',
-        'Компресорне (КС19)',
-        'Трансмісійне (ТАДІ7, Тан-15)',
-        'Нігрол',
-        'Індустріальне (Yuko I-20 / I-40)',
-        'Гідравлічне (МГЕ-46 / HYDROL 32/46)',
-        'YUKO 2T / MOL 2T — 1л',
-        'Вазелінове — 200 л.б.',
-        'Масила (Циатим 201-221 6100гр / Графіт. 1950гр 1:3)',
-        'Нефрас',
-        'Гас (kerosyn)',
-        'Емульсол MOL Makromil 300',
-        'Total 5W30 — 9000 NFC 5L',
-        'Total 5W30 — INEO LONG LIFE 5L',
-        'Total 5W40 — 9000 Energy 5L',
-        'Mol 5W40 Dynamic — 4L',
-        'Mol 5W30 Gold — 4L',
-        'SHELL 5W30 — 1L',
-        'SHELL 5W40 — 1L',
-        'SHELL 10W40 — 1L',
-        'Арал 10W40 для вант. авт. Mega Turbo LA 208л',
+        { name: 'WOLVER 5W30', desc: 'Синтетична моторна олива. Обсяг: 1л / 4л / 5л', price: '420–1560 грн', img: '' },
+        { name: 'WOLVER 5W40', desc: 'Синтетична моторна олива. Обсяг: 1л / 4л', price: '410–1350 грн', img: '' },
+        { name: 'WOLVER 10W40', desc: 'Напівсинтетична моторна олива. Обсяг: 1л / 4л', price: '310–1110 грн', img: '' },
+        { name: 'SAE мега дизель 10W40', desc: 'YUKO / WOLVER. Для дизельних двигунів', price: '200 грн/л', img: '' },
+        { name: 'SAE мега дизель 15W40 розлив', desc: 'YUKO / WOLVER', price: '165–190 грн', img: '' },
+        { name: 'SAE 75W90', desc: 'YUKO / WOLVER. Трансмісійна олива', price: '310–360 грн', img: '' },
+        { name: 'YUKO ATF IID', desc: 'Рідина для автоматичних коробок передач. Обсяг: 1л', price: '300 грн', img: '' },
+        { name: 'Камазівська (М10Г2К)', desc: 'Моторна олива для вантажних автомобілів', price: '140 грн', img: '' },
+        { name: 'Турбодизель (М10/Дм)', desc: 'Моторна олива для турбодизельних двигунів', price: '145 грн', img: '' },
+        { name: 'Тепловозна/автомобільна (М14В2/М8В)', desc: 'Олива для тепловозів та автомобілів', price: '170 грн', img: '' },
+        { name: 'Холодильна (ХА 30)', desc: 'Компресорна олива для холодильних установок', price: '185 грн', img: '' },
+        { name: 'Турбіне (ТП 22с / ТП 30 / ТП 46)', desc: 'Олива для парових та газових турбін', price: '180–200 грн', img: '' },
+        { name: 'Компресорне (КС19)', desc: 'Олива для компресорів', price: '200 грн', img: '' },
+        { name: 'Трансмісійне (ТАДІ7, Тан-15)', desc: 'Трансмісійна олива', price: '210–200 грн', img: '' },
+        { name: 'Нігрол', desc: 'Трансмісійна олива. Обсяг: 4л / 20л', price: '115–2360 грн', img: '' },
+        { name: 'Індустріальне (Yuko I-20 / I-40)', desc: 'Індустріальна олива для верстатів і обладнання', price: '140–145 грн', img: '' },
+        { name: 'Гідравлічне (МГЕ-46 / HYDROL 32/46)', desc: 'Гідравлічна олива', price: '150–220 грн', img: '' },
+        { name: 'YUKO 2T / MOL 2T', desc: 'Олива для двотактних двигунів. Обсяг: 1л', price: '200 грн', img: '' },
+        { name: 'Вазелінове', desc: 'Технічне вазелінове мастило. Обсяг: 200 л.б.', price: 'Договірна', img: '' },
+        { name: 'Масила (Циатим 201-221)', desc: 'Пластичне мастило. 6100гр / Графіт. 1950гр 1:3', price: 'За запитом', img: '' },
+        { name: 'Нефрас', desc: 'Нафтовий розчинник', price: '100 грн', img: '' },
+        { name: 'Гас (kerosyn)', desc: 'Гас технічний', price: '110 грн', img: '' },
+        { name: 'Емульсол MOL Makromil 300', desc: 'Мастильно-охолоджуюча рідина', price: '320 грн', img: '' },
+        { name: 'Total 5W30 — 9000 NFC 5L', desc: 'Синтетична моторна олива Total', price: '1800 грн', img: '' },
+        { name: 'Total 5W30 — INEO LONG LIFE 5L', desc: 'Синтетична моторна олива Total', price: '1850 грн', img: '' },
+        { name: 'Total 5W40 — 9000 Energy 5L', desc: 'Синтетична моторна олива Total', price: '1500 грн', img: '' },
+        { name: 'Mol 5W40 Dynamic 4L', desc: 'Синтетична моторна олива MOL', price: '1400 грн', img: '' },
+        { name: 'Mol 5W30 Gold 4L', desc: 'Синтетична моторна олива MOL', price: '1500 грн', img: '' },
+        { name: 'SHELL 5W30 — 1L', desc: 'Моторна олива Shell', price: '400 грн', img: '' },
+        { name: 'SHELL 5W40 — 1L', desc: 'Моторна олива Shell', price: '380 грн', img: '' },
+        { name: 'SHELL 10W40 — 1L', desc: 'Моторна олива Shell', price: '350 грн', img: '' },
+        { name: 'Арал 10W40 Mega Turbo LA 208л', desc: 'Моторна олива для вантажних автомобілів. Бочка 208л', price: '47000 грн', img: '' },
       ]
     },
     2: {
       title: 'Мастила, антифризи та спецрідини',
       items: [
-        'Солідол — 0.4кг / 4.5кг / 17кг',
-        'Літол — 9кг / 4.5кг / 17кг',
-        'Омивач Yuko — 2L',
-        'AdBlue — 1L',
-        'Антифриз YUKO -42 (5л / 10л / ун.) Червоний (G12)',
-        'Антифриз конц. WOLVER 5л — Синій (G11) / Червоний (G12+)',
-        'Гальмівна рідина YUKO дот 4 (0.6л)',
-        'Мастило силіконове Аерозоль 400мл',
-        'Масла та смазки для харчової промисловості (імп. під замовлення)',
-        'Масла та смазки для виробництва і транспорту',
-        'Оліви Арал / Shell / Titan / Castrol / BMW / Bardahl / Elf / Ford / Febi / GM / Honda / Kia',
-        'Оліви Hundai / Kia / Ligui Moly / Mapetrol / Mazda / Mercedes / Mobil / Motul / Nissan / Orien',
-        'WAG WD-40 ZIG — заправка автокондиціонерів авто і с/г техніки',
-        'Підбір масел і мастил під транспорт/обладнання',
-        'Будь-які масла та смазки для різних типів техніки',
+        { name: 'Солідол', desc: 'Пластичне мастило. Фасовка: 0.4кг / 4.5кг / 17кг', price: '170–3700 грн', img: '' },
+        { name: 'Літол', desc: 'Пластичне мастило. Фасовка: 9кг / 4.5кг / 17кг', price: '2600–4800 грн', img: '' },
+        { name: 'Омивач Yuko', desc: 'Омивач лобового скла. Обсяг: 2L', price: '160 грн', img: '' },
+        { name: 'AdBlue', desc: 'Рідина для SCR-систем дизельних авто. Обсяг: 1L', price: '22 грн', img: '' },
+        { name: 'Антифриз YUKO -42', desc: 'Червоний (G12). Обсяг: 5л / 10л / ун. 5л — 700 грн', price: '200–1400 грн', img: '' },
+        { name: 'Антифриз конц. WOLVER 5л', desc: 'Синій (G11) / Червоний (G12+). Концентрат', price: '1200–1400 грн', img: '' },
+        { name: 'Гальмівна рідина YUKO дот 4', desc: 'Гальмівна рідина DOT 4. Обсяг: 0.6л', price: '205 грн', img: '' },
+        { name: 'Мастило силіконове Аерозоль 400мл', desc: 'Силіконове мастило в аерозолі', price: '250 грн', img: '' },
+        { name: 'Масла для харчової промисловості', desc: 'Імпортні під замовлення', price: 'За запитом', img: '' },
+        { name: 'Масла для виробництва і транспорту', desc: 'Будь-які масла та смазки для різних типів техніки', price: 'За запитом', img: '' },
+        { name: 'Оліви Арал / Shell / Titan / Castrol / BMW / Bardahl / Elf / Ford / Febi / GM / Honda / Kia', desc: 'Імпортні оливи провідних брендів', price: 'За запитом', img: '' },
+        { name: 'Оліви Hundai / Kia / Ligui Moly / Mapetrol / Mazda / Mercedes / Mobil / Motul / Nissan / Orien', desc: 'Імпортні оливи провідних брендів', price: 'За запитом', img: '' },
+        { name: 'WAG WD-40 ZIG', desc: 'Заправка автокондиціонерів авто і с/г техніки', price: 'За запитом', img: '' },
+        { name: 'Підбір масел і мастил', desc: 'Під транспорт і обладнання — безкоштовна консультація', price: 'За запитом', img: '' },
+        { name: 'Масло силіконове Аерозоль', desc: '400мл. Універсальне застосування', price: '250 грн', img: '' },
       ]
     },
     3: {
       title: 'Автохімія, розчинники та послуги СТО',
       items: [
-        'Спирти технічні — Бутанол / Гліцерин / Бутилгліколь / Етанол / ДЕА',
-        'Розчинники в асортименті (імп. наливом і фасовці)',
-        'Автошини легкових транспортних засобів і вантажного та с/г транспорту',
-        'Спирти хімія в асортименті — Кислоти / Ефіри / Лаки / Емалі / Добавки харчові',
-        'Сипуча хімія та добрива',
-        'Розчинники різні та припої',
-        'Метали, сплави і припої',
-        'Промислова хімія в асортименті (імпортна)',
-        'СТО ПМП «Відар» — шиномонтаж, заміна масел/ремонт ходової/замена авто авт/с/г техніці',
-        'Комп\'ютерна діагностика транспорту',
-        'Легкові і вантажні авт. / с/г техніка та рефрижератор',
-        'Забирають відпрацьоване масло',
+        { name: 'Спирти технічні', desc: 'Бутанол / Гліцерин / Бутилгліколь / Етанол / ДЕА', price: 'За запитом', img: '' },
+        { name: 'Розчинники в асортименті', desc: 'Імпортні наливом і фасовці', price: 'За запитом', img: '' },
+        { name: 'Автошини', desc: 'Легкових ТЗ і вантажного та с/г транспорту', price: 'За запитом', img: '' },
+        { name: 'Спирти хімія в асортименті', desc: 'Кислоти / Ефіри / Лаки / Емалі / Добавки харчові', price: 'За запитом', img: '' },
+        { name: 'Сипуча хімія та добрива', desc: 'В асортименті', price: 'За запитом', img: '' },
+        { name: 'Розчинники різні та припої', desc: 'В асортименті', price: 'За запитом', img: '' },
+        { name: 'Метали, сплави і припої', desc: 'В асортименті', price: 'За запитом', img: '' },
+        { name: 'Промислова хімія', desc: 'В асортименті імпортна', price: 'За запитом', img: '' },
+        { name: 'СТО — Шиномонтаж та заміна масел', desc: 'Шиномонтаж, ремонт ходової, заправка кондиціонера', price: 'За запитом', img: '' },
+        { name: 'Комп\'ютерна діагностика', desc: 'Діагностика легкових, вантажних авт. та с/г техніки', price: 'За запитом', img: '' },
+        { name: 'Обслуговування рефрижераторів', desc: 'Легкові і вантажні авт. / с/г техніка та рефрижератор', price: 'За запитом', img: '' },
+        { name: 'Прийом відпрацьованого масла', desc: 'Забирають відпрацьоване масло', price: 'Безкоштовно', img: '' },
       ]
     }
   };
 
+  // ===== Catalog Sidebar =====
   const sidebar = document.getElementById('catalogSidebar');
   const overlay = document.getElementById('sidebarOverlay');
   const sidebarTitle = document.getElementById('sidebarTitle');
@@ -168,15 +128,23 @@
   const sidebarClose = document.getElementById('sidebarClose');
   const sidebarOrderBtn = document.getElementById('sidebarOrderBtn');
 
+  let currentCategoryId = null;
+
   const openSidebar = (categoryId) => {
     const data = catalogData[categoryId];
     if (!data) return;
+    currentCategoryId = categoryId;
 
     sidebarTitle.textContent = data.title;
     sidebarList.innerHTML = '';
-    data.items.forEach((item) => {
+    data.items.forEach((item, idx) => {
       const li = document.createElement('li');
-      li.textContent = item;
+      li.textContent = item.name;
+      li.style.cursor = 'pointer';
+      li.setAttribute('role', 'button');
+      li.setAttribute('tabindex', '0');
+      li.addEventListener('click', () => openProductModal(categoryId, idx));
+      li.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') openProductModal(categoryId, idx); });
       sidebarList.appendChild(li);
     });
 
@@ -195,28 +163,85 @@
   };
 
   document.querySelectorAll('.catalog-open-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const cat = parseInt(btn.dataset.category, 10);
-      openSidebar(cat);
-    });
+    btn.addEventListener('click', () => openSidebar(parseInt(btn.dataset.category, 10)));
   });
 
   sidebarClose.addEventListener('click', closeSidebar);
   overlay.addEventListener('click', closeSidebar);
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && sidebar.classList.contains('open')) {
-      closeSidebar();
-    }
-  });
-
-  // Кнопка "Замовити товар" в сайдбарі — закриває панель і скролить до форми
   sidebarOrderBtn.addEventListener('click', (e) => {
     e.preventDefault();
     closeSidebar();
-    setTimeout(() => {
-      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
-    }, 350);
+    setTimeout(() => document.getElementById('booking').scrollIntoView({ behavior: 'smooth' }), 350);
+  });
+
+  // ===== Product Modal =====
+  const productModal = document.getElementById('productModal');
+  const productModalOverlay = document.getElementById('productModalOverlay');
+  const productModalClose = document.getElementById('productModalClose');
+  const productModalTitle = document.getElementById('productModalTitle');
+  const productModalDesc = document.getElementById('productModalDesc');
+  const productModalPrice = document.getElementById('productModalPrice');
+  const productModalCategory = document.getElementById('productModalCategory');
+  const productModalImg = document.getElementById('productModalImg');
+  const productModalPlaceholder = document.getElementById('productModalPlaceholder');
+  const productModalOrder = document.getElementById('productModalOrder');
+
+  const openProductModal = (categoryId, itemIdx) => {
+    const cat = catalogData[categoryId];
+    if (!cat) return;
+    const item = cat.items[itemIdx];
+    if (!item) return;
+
+    productModalCategory.textContent = cat.title;
+    productModalTitle.textContent = item.name;
+    productModalDesc.textContent = item.desc;
+    productModalPrice.textContent = item.price;
+
+    if (item.img) {
+      productModalImg.src = item.img;
+      productModalImg.alt = item.name;
+      productModalImg.style.display = 'block';
+      productModalPlaceholder.style.display = 'none';
+    } else {
+      productModalImg.style.display = 'none';
+      productModalPlaceholder.style.display = 'flex';
+    }
+
+    productModal.classList.add('open');
+    productModalOverlay.classList.add('open');
+    productModalOverlay.removeAttribute('aria-hidden');
+    document.body.style.overflow = 'hidden';
+    productModalClose.focus();
+  };
+
+  const closeProductModal = () => {
+    productModal.classList.remove('open');
+    productModalOverlay.classList.remove('open');
+    productModalOverlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+  };
+
+  productModalClose.addEventListener('click', closeProductModal);
+  productModalOverlay.addEventListener('click', closeProductModal);
+
+  productModalOrder.addEventListener('click', () => {
+    closeProductModal();
+    closeSidebar();
+    // Pre-fill category in the form if possible
+    const catSelect = document.getElementById('f-category');
+    if (catSelect && currentCategoryId) {
+      const cat = catalogData[currentCategoryId];
+      if (cat) catSelect.value = cat.title;
+    }
+    setTimeout(() => document.getElementById('booking').scrollIntoView({ behavior: 'smooth' }), 350);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (productModal.classList.contains('open')) closeProductModal();
+      else if (sidebar.classList.contains('open')) closeSidebar();
+    }
   });
 
   // ===== Order Form -> Telegram =====
@@ -259,10 +284,7 @@
       firstInvalid = firstInvalid || form.phone;
     }
 
-    if (firstInvalid) {
-      firstInvalid.focus();
-      return;
-    }
+    if (firstInvalid) { firstInvalid.focus(); return; }
 
     submitBtn.disabled = true;
     submitBtn.textContent = 'Надсилаємо…';
@@ -279,9 +301,7 @@
     ].join('\n');
 
     try {
-      if (!cfg.telegramBotToken || cfg.telegramBotToken.includes('PASTE_')) {
-        throw new Error('not-configured');
-      }
+      if (!cfg.telegramBotToken || cfg.telegramBotToken.includes('PASTE_')) throw new Error('not-configured');
 
       const response = await fetch(`https://api.telegram.org/bot${cfg.telegramBotToken}/sendMessage`, {
         method: 'POST',
@@ -295,7 +315,7 @@
       statusEl.textContent = "Дякуємо! Ми зв'яжемося з вами найближчим часом.";
       statusEl.className = 'booking-status success';
     } catch (err) {
-      statusEl.innerHTML = `Не вдалося надіслати заявку. Зателефонуйте нам напряму: <a href="tel:${cfg.phone}">${cfg.phoneDisplay}</a>`;
+      statusEl.innerHTML = `Не вдалося надіслати заявку. Зателефонуйте нам: <a href="tel:${cfg.phone}">${cfg.phoneDisplay}</a>`;
       statusEl.className = 'booking-status error';
     } finally {
       submitBtn.disabled = false;

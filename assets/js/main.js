@@ -139,10 +139,22 @@
     sidebarList.innerHTML = '';
     data.items.forEach((item, idx) => {
       const li = document.createElement('li');
-      li.textContent = item.name;
       li.style.cursor = 'pointer';
       li.setAttribute('role', 'button');
       li.setAttribute('tabindex', '0');
+      
+      let imgSrc = Array.isArray(item.img) ? item.img[0] : item.img;
+      if (!imgSrc) imgSrc = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2QxZDVkYiIvPjwvc3ZnPg==';
+
+      li.innerHTML = `
+        <img src="${imgSrc}" class="category-card-img" alt="${item.name}" loading="lazy">
+        <div class="category-card-content">
+          <div class="category-card-title">${item.name}</div>
+          <div class="category-card-desc">${item.desc}</div>
+          <div class="category-card-price">${item.price}</div>
+        </div>
+      `;
+
       li.addEventListener('click', () => openProductModal(categoryId, idx));
       li.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') openProductModal(categoryId, idx); });
       sidebarList.appendChild(li);
